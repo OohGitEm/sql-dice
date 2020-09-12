@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS rolls;
+
+CREATE TABLE rolls (
+    result INTEGER PRIMARY KEY AUTOINCREMENT,
+    num_roll INTEGER
+);
