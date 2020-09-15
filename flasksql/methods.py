@@ -1,5 +1,6 @@
 import flask
 import rolltide
+import sqlite3
 
 app = flask.Flask(__name__)
 @app.route('/roll', methods=['GET'])
@@ -12,3 +13,11 @@ def roll_n_sided_dice_n_times():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
 
+conn = sqlite3.connect('test.db')
+c = conn.cursor()
+
+c.execute("INSERT INTO stocks VALUES (flask.jsonify(rolls_dict))")
+# how to make work por que
+
+conn.commit()
+conn.close()
