@@ -13,13 +13,13 @@ def roll_n_sided_dice_n_times():
 
 ##---- TODO
 # First write a REST endpoint that allows someone to initialize a new game. General structure will look like:
-app.route('/initializeGame', methods=['POST']
+app.route('/initializeGame', methods=['POST'])
 def initialize_game():
     with open("game_name.json", "w") as json_file:
         data = json.load(json_file)
 
 # Create an endpoint to roll a dice and record to json file with persons name, roll id, timestamp, and roll
-@app.route('rollAndSave')
+@app.route('/rollAndSave')
 def roll_n_save():
     json.load(json_file) #LOAD JSON FILE AND ASSIGN NEWEST ID
 
@@ -28,7 +28,7 @@ def roll_n_save():
     if 'num_sides' in request.args:
         num_sides = int(request.args['num_sides'])
     if 'num_dice' in request.args:
-        num_dice = int)request.args['num_dice'])
+        num_dice = int(request.args['num_dice'])
     else:
         return "ERROR"
 
